@@ -1,6 +1,9 @@
 ---
-title: "Data Analysis Report using MIDAS authoring tool"
-output: html_document
+title: "Data Analysis Reporting Template using MIDAS authoring tool"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
 always_allow_html: yes
 ---
 ```{r}
@@ -14,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-#Pretreatment of data:
+##Pretreatment of data:
 
 <!-- What are the dimensions of the dataset entering this phase of analysis?-->
 
@@ -44,7 +47,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- Please describe-->
 
-<!-- 	Outline the order of the steps performed on the dataset: E.g. I-> T-> S->N->F->QC-->
+<!-- Outline the order of the steps performed on the dataset: E.g. I-> T-> S->N->F->QC-->
 
 <!--Have the dimensions of the dataset changed? If yes how and why?-->
 
@@ -55,11 +58,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!--If in house code is used provide it or a link to it and also the language it is written in.-->
 
-<!---->
 
 
 
-#Univariate Data Analysis
+
+##Univariate Data Analysis
 
 <!--What are the dimensions of the dataset entering this phase of analysis?-->
 
@@ -92,20 +95,8 @@ knitr::opts_chunk$set(echo = TRUE)
 <!--If in house code is used provide it or a link to it and also the language it is written in.-->
 
 
-#Multivariate Data Analysis
 
-<!--What are the dimensions of the dataset entering this phase (Nxm)?-->
-
-<!--Is a data analysis package used?-->
-
-<!--If yes please reference it.-->
-
-<!--Is original code used?-->
-
-<!--If yes please provide a reference link to it.-->
-
-
-#Unsupervised Analysis
+##Unsupervised Analysis
 
 <!--What are the dimensions of the dataset entering this phase of the analysis?-->
 
@@ -126,40 +117,29 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!--If in house code is used provide it or a link to it and also the language it is written in.-->
 
-#Supervised Analysis
+##Supervised Analysis
 
 <!--What are the dimensions of the dataset at this point?-->
 
 <!--Are supervised methods employed?.-->
 
-<!--If yes describe algorithm used and provide details on meta parameters used.-->
+<!--If yes describe the supervised analysis described fully enough to allow imitation of the exact procedure. This  would require reporting all the following information: all parameters; details of how data is split; details of how internal validation is conducted (i.e. Cross Validation); details of how meta-parameter optimization is performed; details about the chosen metric for assessing the predictive ability of the model and finally the overall description of the workflow.-->
 
-<!--Is more than one method employed?.-->
+<!--Is more than one supervised method employed?-->
 
-<!--Is more than one method employed? If yes describe other algorithm(s) used and provide details on meta parameters used for each algorithm
-.-->
-
-<!--Please provide details on how data is split for model optimisation..-->
-
-<!--Describe the performance of the model at this stage using performance metrics R2 Q2..-->
-
-<!--Are permutations performed?.-->
-
-<!--If yes detail how many.-->
+<!--If yes describe the implemention of the other alorithm(s) fully enough to allow imitation of the exact procedure. This  would require reporting all the following information: all parameters; details of how data is split; details of how internal validation is conducted (i.e. Cross Validation); details of how meta-parameter optimization is performed; details about the chosen metric for assessing the predictive ability of the model and finally the overall description of the workflow-->
 
 <!--Is external validation employed?.-->
 
 <!--If yes describe source of external data. Is the data from the same location/ lab/timeline?.-->
 
-<!--Describe the performance of the model in terms of R2X R2Y..-->
-
 <!--Provide a confusion matrix of results..-->
 
-<!--Are potential biomarkers identified?If yes, list them.-->
+<!--Are potential biomarkers identified? If yes, list them.-->
 
 <!--Have the dimensions of the dataset changed? If yes how and why?-->
 
-<!--Provide the dimensions of the dataset at the end of univariate analysis.-->
+<!--Provide the dimensions of the dataset at the end of supervised analysis.-->
 
 <!--Provide details on the package or program used for this phase of the analysis-->
 
@@ -168,7 +148,7 @@ to it and also the language it is written in.-->
 
 <!--Describe their performance in terms of AUC, sensitivity and specificity.-->
 
-#ROC Analysis
+##ROC Analysis
 
 <!--Is ROC analysis performed on the identified putative biomarkers?-->
 
@@ -191,7 +171,7 @@ to it and also the language it is written in.-->
 
 
 
-#Workflow Diagram of Pretreatment Phase of Data Analysis
+###Workflow Diagram of Pretreatment Phase of Data Analysis
 <!--Below you will be instructed to enter the steps of the pretreatment phase of analysis so that they will become nodes of your workflow diagram. You will also be asked to differentiate between the different datasets at each point -->
 
 ```{r pressure, echo=FALSE}
@@ -241,7 +221,7 @@ Filtering->BiomarkerList1;
 
 ```
 
-#Workflow Diagram of all major steps of the Data Analysis
+###Workflow Diagram of all major steps of the Data Analysis
 
 
 
@@ -250,25 +230,35 @@ Filtering->BiomarkerList1;
 grViz("
   digraph boxes_and_circles{
 
-### write out all steps of the analysis as below separated by semicolon
+
+
+### This will give all the steps of the analysis a box shape in your diagram
 
 node [shape = box]
 
+### Instruction 3: Write out all steps of the analysis as below separated by semicolon
 
 Pretreatment; Univariate_Analysis; Supervised_Analysis; Unsupervised_Analysis;ROC_Analysis;
 
 
+
+### This will give all the datasets and biomarker lists entering and resulting from the analysis a circle shape in your diagram
+
 node [shape = circle]
 
-Dataset1_100x4000;  BiomarkerList1; Dataset3_100x1500; BiomarkerList2; BiomarkerList3;  Dataset4;
+### Instruction 4: Write out all datasets inputs and outputs and all biomarker lists created at the pretreatment stage, include the dimensions of the input and output datasets in the name, in the following format...dataset#_NxM, where # is the unique identifier of the dataset which is the input or output at that point in the analysis, where N is the number of samples (rows) in the dataset and where m is the number of variables or peaks (columns) in the dataset at that point in the analysis. Delete or add to this list as appropriateDataset1_100x4000;  BiomarkerList1; Dataset3_100x1500; BiomarkerList2; BiomarkerList3;  Dataset4;Dataset2_100x3500;
 
-###Connect the nodes with edges
+###Instruction 5: Connect the nodes with edges by using an arrow in the following way
 
-Dataset1_100x4000 ->Pretreatment;
+Dataset1_100x4000 ->QC_Treatment;
 
-Pretreatment ->Dataset3_100x1500;
+QC_Treatment-> Dataset2_100x3500; 
+
+Dataset2_100x3500 -> Pretreatment;
 
 Pretreatment ->BiomarkerList1;
+
+Pretreatment ->Dataset3_100x1500;
 
 Dataset3_100x1500-> Univariate_Analysis;
 
@@ -292,98 +282,7 @@ BiomarkerList3-> ROC_Analysis;
 ```
 
 
-```{r  echo=FALSE}
-grViz("
-  digraph boxes_and_circles{
-
-### write out all steps of the analysis as below separated by semicolon
-
-node [shape = box]
-
-
-Pretreatment; Univariate_Analysis; Supervised_Analysis; Unsupervised_Analysis;ROC_Analysis;
-
-
-node [shape = circle]
-
-Dataset1;  BiomarkerList1; Dataset2; BiomarkerList2; BiomarkerList3;  Dataset3;
-
-###Connect the nodes with edges
-
-Dataset1->Pretreatment;
-
-Pretreatment ->Dataset2;
-
-Pretreatment ->BiomarkerList1;
-
-Dataset2-> Univariate_Analysis;
-
-Univariate_Analysis-> BiomarkerList2;
-
-Univariate_Analysis-> Dataset3;
-
-Dataset3->Unsupervised_Analysis;
-
-Dataset3->Supervised_Analysis;
-
-Supervised_Analysis-> BiomarkerList3;
-
-BiomarkerList3-> ROC_Analysis;
 
 
 
-  }
-      ")
-
-```
-
-
-```{r  echo=FALSE}
-grViz("
-  digraph boxes_and_circles{
-
-### write out all steps of the analysis as below separated by semicolon
-
-node [shape = box]
-
-
-Pretreatment; Univariate_Analysis; Supervised_Analysis; Unsupervised_Analysis;ROC_Analysis;
-
-
-node [shape = circle]
-
-BiomarkerList1; BiomarkerList2; 
-
-###Connect the nodes with edges
-
-
-
-Pretreatment ->Univariate_Analysis;
-
-Pretreatment ->Unsupervised_Analysis;
-
-Unsupervised_Analysis->BiomarkerList3;
-
-Unsupervised_Analysis->Univariate_Analysis;
-
-Unsupervised_Analysis ->Supervised_Analysis;
-
-Pretreatment ->Supervised_Analysis;
-
-Univariate_Analysis-> Supervised_Analysis;
-
-Supervised_Analysis->Univariate_Analysis;
-
-Univariate_Analysis->BiomarkerList1;
-
-Supervised_Analysis-> BiomarkerList2;
-
-BiomarkerList2-> ROC_Analysis;
-
-BiomarkerList1-> ROC_Analysis;
-
-  }
-      ")
-
-```
 
