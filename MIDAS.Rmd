@@ -1,6 +1,9 @@
 ---
-title: "Data Analysis Report using MIDAS authoring tool"
-output: html_document
+title: 'Data Analysis Report using MIDAS authoring tool   '
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
 always_allow_html: yes
 ---
 ```{r}
