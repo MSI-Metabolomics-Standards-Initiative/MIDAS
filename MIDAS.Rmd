@@ -56,10 +56,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!--Provide details on the package or program used for this phase of the analysis-->
 
-<!--If in house code is used provide it or a link to it and also the language it is written in.-->
-
-
-
+<!--If in house code is used provide it or a link to it and also the language the code is written in.-->
 
 
 ##Univariate Data Analysis
@@ -92,14 +89,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!--Provide details on the package or program used for this phase of the analysis-->
 
-<!--If in house code is used provide it or a link to it and also the language it is written in.-->
+<!--If in house code is used provide it or a link to it and also the language the code is written in.-->
+
+<!--If a list of potential biomarkers is produced at this point please state this explicitly.-->
 
 
 
 ##Unsupervised Analysis
 
 <!--What are the dimensions of the dataset entering this phase of the analysis?-->
-
 
 <!--Are unsupervised methods employed for visualisation and/ or data reduction and/or correlation analysis?-->
 
@@ -116,6 +114,8 @@ knitr::opts_chunk$set(echo = TRUE)
 <!--Provide details on the package or program used for this phase of the analysis-->
 
 <!--If in house code is used provide it or a link to it and also the language it is written in.-->
+
+<!--If a list of potential biomarkers is produced at this point please state this explicitly.-->
 
 ##Supervised Analysis
 
@@ -143,10 +143,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!--Provide details on the package or program used for this phase of the analysis-->
 
-<!--If in house code is used provide it or a link 
-to it and also the language it is written in.-->
+<!--If in house code is used provide it or a link to it and also the language the code is written in.-->
 
-<!--Describe their performance in terms of AUC, sensitivity and specificity.-->
+<!--If a list of potential biomarkers is produced at this point please state this explicitly.-->
 
 ##ROC Analysis
 
@@ -156,7 +155,9 @@ to it and also the language it is written in.-->
 
 <!--Provide details on the package or program used for this phase of the analysis-->
 
-<!--If in house code is used provide it or a link to it and also the language it is written in.-->
+<!--If in house code is used provide it or a link to it and also the language the code is written in.-->
+
+
 
 
 
