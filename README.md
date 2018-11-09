@@ -1,5 +1,11 @@
 # MIDAS
-<b> Minimum Information about Data AnalysiS:</b> Authoring Tool in Rmarkdown
+<b> Minimum Information about Data AnalysiS:</b> Authoring Tool in Rmarkdown.
+
+MIDAS is an R markdown reporting template file that guides the production of text and generates workflow diagrams based on user input.  This R Markdown template contains, as an example in this instance, a set of minimum information requirements specifically for the data pretreatment and data analysis section of biomarker discovery metabolomics studies, (gleaned directly from the original proposed guidelines by Goodacre at al). These minimum requirements are presented in the format of a questionnaire checklist in the R markdown template file.
+
+The R Markdown reporting template proposed here can be presented as a starting point to encourage the data analysis section of a metabolomics manuscript to have a more logical and stepwise presentation and to contain enough information to be understandable and reusable. <b> The idea is that these guidelines would open to user feedback, modification and updating by the metabolomics community via github </b>.
+
+
 Here are the instructions on how to use this R Markdown authoring template.
 
 1.	Click on the “clone or download” button on the right hand side of this page and download the folder as a zip file.
