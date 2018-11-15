@@ -23,27 +23,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- What percentage of the data is Missing Values?-->
 
-<!-- Is imputation performed?-->
+<!-- Is imputation (I) performed?-->
 
 <!-- If yes describe method-->
 
-<!-- Is normalisation performed?-->
+<!-- Is normalisation (N) performed?-->
 
 <!-- If yes describe method-->
 
-<!-- Is transformation performed?-->
+<!-- Is transformation (T) performed?-->
 
 <!-- If yes describe method-->
 
-<!-- Is scaling performed?-->
+<!-- Is scaling (S)performed?-->
 
 <!-- If yes describe method-->
 
-<!-- Is filtering applied to the dataset at this point?-->
+<!-- Is filtering (F) applied to the dataset at this point?-->
 
 <!-- If yes describe method-->
 
-<!-- Is a QC method employed on the dataset-->
+<!-- Is a QC (QC) method employed on the dataset-->
 
 <!-- Please describe-->
 
@@ -71,11 +71,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!--If yes describe method-->
 
-<!--Is another method of univariate testing performed?-->
+<!--Are other methods of univariate testing performed?-->
 
-<!--If yes describe method
+<!--If yes describe methods
 
-<!--Is multiple testing correction employed with this method?
+<!--Are multiple testing correction employed with these methods?
 
 <!--If yes describe method-->
 
